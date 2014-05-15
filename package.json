@@ -1,0 +1,18 @@
+{
+  "name": "knockout-init",
+  "version": "1.0.0",
+  "description": "This is a simple knockout component that will automatically create observables from arbitrary json",
+  "main": "app.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "private": true,
+  "author": "Archon",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-connect": "^0.7.1",
+    "connect-nocache": "^1.0.1"
+  }
+}
