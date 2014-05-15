@@ -1,0 +1,15 @@
+{
+  "name": "knockout-init",
+  "version": "1.0.0",
+  "main": "knockout.init.js",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "knockout.js": "~3.0.0",
+    "knockout-moment": "~1.0.0",
+    "knockout-integer": "~1.0.0",
+    "knockout-money": "~1.0.0"
+  }
+}
