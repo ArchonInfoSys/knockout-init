@@ -36,3 +36,19 @@ console.log(myObj.createdOn.usFormat()); //05/15/2014
 console.log(myObj.numberOfThings.formatted()); //4,700
 console.log(myObj.price.formatted()); //$570,000.00
 ```
+
+##How to Run Tests
+
+Clone this repository and run:
+
+```
+npm install
+bower install
+grunt
+```
+
+You will need to have `grunt-cli` installed globally if you don't already have it. Install it if you don't:
+
+```
+npm install grunt-cli -g
+```

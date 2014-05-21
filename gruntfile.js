@@ -1,5 +1,3 @@
-var noCache = require("connect-nocache")();
-
 module.exports = function(grunt) {
 	grunt.initConfig({
 		jshint: {
@@ -9,28 +7,36 @@ module.exports = function(grunt) {
 				"!bower_components/**/*.js"
 			]
 		},
-		connect: {
-			server: {
+		jasmine: {
+			test: {
+				src: [
+					"**/*.tests.js",
+					"!gruntfile.js",
+					"!node_modules/**/*.js",
+					"!bower_components/**/*.js"
+				],
 				options: {
-					port: 1337,
-					base: ".",
-					keepalive: true,
-					open: "http://localhost:1337/test.html",
-					middleware: function(connect, options) {
-						return [
-							noCache,
-							connect.static(options.base)
-						];
+					keepRunner: true,
+					template: require("grunt-template-jasmine-requirejs"),
+					templateOptions: {
+						requireConfig: {
+							paths: {
+								knockout: "bower_components/knockout/dist/knockout.debug",
+								"knockout.integer": "bower_components/knockout-integer/knockout.integer",
+								"knockout.money": "bower_components/knockout-money/knockout.money",
+								"knockout.moment": "bower_components/knockout-moment/knockout.moment",
+								accounting: "bower_components/accounting/accounting",
+								moment: "bower_components/moment/moment"
+							}
+						}
 					}
 				}
 			}
 		}
 	});
 
-	grunt.loadNpmTasks("grunt-contrib-connect");
+	grunt.loadNpmTasks("grunt-contrib-jasmine");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 
-	grunt.registerTask("test", ["connect"]);
-
-	grunt.registerTask("default", ["jshint"]);
+	grunt.registerTask("default", ["jshint", "jasmine"]);
 };
