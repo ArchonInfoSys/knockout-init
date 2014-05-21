@@ -1,6 +1,6 @@
 {
   "name": "knockout-init",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This is a simple knockout component that will automatically create observables from arbitrary json",
   "main": "app.js",
   "scripts": {
