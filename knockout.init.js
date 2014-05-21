@@ -16,7 +16,7 @@
 
 		for (var prop in src) {
 			if (src.hasOwnProperty(prop) && options.ignore.indexOf(prop) < 0) {
-				var observable = ko.observable();
+				var observable = dest.hasOwnProperty(prop) ? dest[prop] : ko.observable();
 
 				if (options.dates.indexOf(prop) !== -1) {
 					observable = observable.extend({
