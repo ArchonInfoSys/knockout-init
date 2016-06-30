@@ -5,7 +5,8 @@
   "main": "knockout.init.js",
   "scripts": {
     "lint": "eslint . --format=unix",
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "npm run lint && npm test"
   },
   "author": "CivicSource",
   "license": "ISC",
